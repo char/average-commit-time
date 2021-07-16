@@ -68,9 +68,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     eprintln!();
 
     let sums = counts.iter().fold([0usize; 24], |a, b| {
-        let mut result = [0usize; 24];
+        let mut result = a;
         for i in 0..24usize {
-            result[i] = a[i] + b[i];
+            result[i] += b[i];
         }
 
         result
